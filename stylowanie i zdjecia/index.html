@@ -24,21 +24,76 @@
     </nav>
     <section id="hero-section" class="hero-section">
         <div class="hero-image">
-            <div>
-                <p>
+            <div class="welcome-text">
+                <h3 class="dark">
                     Your adventure starts now
-                </p>
-                <p>
+                </h3>
+                <p class="dark">
                     Start discovering world around you
                 </p>
             </div>
     
-            <div>
+            <div class="search-container">
                 <input type="text" placeholder="What's your dream destination?">
-                    <button>Browse</button>
+                <button class="primary-green">Browse</button>
             </div>
         </div>
         
+    </section>
+    <section id="destinations-section" class="destinations-section grid">
+        <h3 class="orange destinations-text">
+            Our most popular destinations
+        </h3>
+        <article class="card" type="destination" mode="vertical">
+            <div class="destination-image-container" mode="vertical">
+                <img class="destination-image" src="./assets/Athens.jpg" alt="Athens">
+            </div>
+            <div class="card" type="destination" mode="vertical">
+                <div>
+                    <p class="green">
+                        Athens
+                    </p>
+                    <p class="dark">
+                        23.09.2001 - 12.69.2137
+                    </p>
+                </div>
+                <p class="dark">
+                    Experience the rich history and culture of Athens, one of the world's oldest cities and the birthplace of Western civilization. Wander through the streets of Plaka, the charming historic district, and marvel at the ancient landmarks that have stood the test of time.                </p>
+                <div class="destination-card-footer">
+                    <p class="orange bold">
+                        cena - duzo pieniędzy 
+                    </p>
+                    <button class="primary-orange" type="submit">
+                        Book now
+                    </button>
+                </div>
+            </div>
+        </article>
+        <article class="card" type="destination" mode="horizontal">
+            <div class="destination-image-container" mode="vertical">
+                <img class="destination-image" mode="horizontal" src="./assets/Athens.jpg" alt="Athens">
+            </div>
+            <div class="card" type="destination" mode="vertical">
+                <div>
+                    <p class="green">
+                        Athens
+                    </p>
+                    <p class="dark">
+                        23.09.2001 - 12.69.2137
+                    </p>
+                </div>
+                <p class="dark">
+                    Experience the rich history and culture of Athens, one of the world's oldest cities and the birthplace of Western civilization. Wander through the streets of Plaka, the charming historic district, and marvel at the ancient landmarks that have stood the test of time.                </p>
+                <div class="destination-card-footer">
+                    <p class="orange bold">
+                        cena - duzo pieniędzy 
+                    </p>
+                    <button class="primary-orange" type="submit">
+                        Book now
+                    </button>
+                </div>
+            </div>
+        </article>
     </section>
 </body>
 </html>
