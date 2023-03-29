@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --black: #3B3B3B;
+    --main-blue: #A5B3ff;
+    --secondary-blue: #E5EEFF;
+    --brown: #6C4801;
+    --main-yellow: #FFC044;
+    --secondary-yellow: #FFF8E4;
+    --white: #FFFFFF;
+    --outer-radius: 1rem;
+    --inner-radius: 4px;
+    --big-font: 2rem /* 32 px */;
+    --medium-font: 1.125rem /* 18 px */;
+    --hover-transition: all 0.3s ease-in-out;
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+input {
+    width: 100%;
+    border: 1px var(--main-blue) solid ;
+    font-size: var(--medium-font-size);
+    transition: var(--hover-transition);
+    border-radius: var(--inner-radius);
+    padding: 1.1rem;
+}
+
+h3{
+    color: var(--brown);
+    text-align: center;
+}
+
+.yellow-button{
+    background-color: var(--main-yellow);
+}
+
+hero-login-np-password.yellow-button {
+    background-color: var(--main-yellow);
+}
+
+input:focus{
+    border-bottom: 1px solid var(--primary-green);
+    font-size: var(--medium-font);
+
+
+}
+
+.hero-logo {
+    background-image: url('assets\\dots-hero-section.svg');
+    background-repeat: repeat-y;
+    background-position: top left;
+    padding: 1rem;
+    text-align: center;
+}
+
+.hero-login-panel{
+    display: flex;
+    grid-column: 2/6;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+}
+
+.hero-welcome {
+    background-image: url('assets//dots hero section.svg');
+    background-repeat: no-repeat;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.hero-welcome > p:first-of-type {
+    font-size: var(--big-font);
+}
+
+.hero-login-panel {
+    display: flex;
+    grid-column: 2/6;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+}
+
+.hero-section {
+    min-height: 110vh;
+    height: auto;
+    padding: 100px 0px;
+    justify-content: center;
+}
+
+.hero-image{
+    grid-column: 7/12;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    margin: 0px 100px;
+    column-gap: 20px;
+}
+
+.hero-login {
+    display: flex;
+    grid-column: 2/6;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+}
+
+
+.navbar {
+    background-color: var(--white);
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem 100px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    column-gap: 3rem;
+    list-style-type: none;
+    align-items: center;
+    text-decoration: none;
+}
+
+.font-bold{
+    font-weight: bold;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 15px;
+    gap: 10px;
+    border-radius: var(--inner-radius);
+    cursor: pointer;
+}
+
+
+.hero-forgot-password{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.who-we-are-motto {
+    grid-column: 4/10;
+    background-image: url('assets\\dots-about-section.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 1rem;
+    text-align: center;
+    height: fit-content;
+    padding: 3rem 0;
+}
+
+.yellow-text{
+    color: var(--main-yellow);
+}
+
+.who-we-are-element {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    row-gap: 2rem;
+    border-radius: 0.5rem;
+}
+
+.who-we-are-motto > p:first-of-type {
+    font-size: var(--big-font);
+}
+
+.who-we-are-elements-view {
+    grid-template-rows: repeat(6, 1fr);
+    row-gap: 20px;
+    background-color: var(--secondary-yellow);
+    grid-column: 1/13;
+    border-radius: 0.5rem;
+}
+
+.who-we-are-section {
+    grid-template-rows: 1fr 4.5fr;
+    min-height: 110vh;
+    height: auto;
+    padding: 100px 0px;
+    margin: 0;
+
+}
+
+
+.who-we-are-element:nth-of-type(1){
+    grid-column: 2/7;
+    grid-row: 2/4;
+}
+
+.who-we-are-element:nth-of-type(2){
+    grid-column: 7/12;
+    grid-row: 2/4;
+}
+
+.who-we-are-element:nth-of-type(3){
+    grid-column: 2/7;
+    grid-row: 4/6;
+}
+
+.who-we-are-element:nth-of-type(4){
+    grid-column: 7/12;
+    grid-row: 4/6;
+}
+
+.who-we-are-element > p{
+    text-align: center;
+}
+
+
+
+
+
+.fa::after {
+    content: "\00a0";
+}
+
+.feedback-section {
+    padding: 100px 0;
+}
+
+.feedback-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+    grid-column: 1/5;
+}
+.feedback-left > button{
+    width: fit-content; 
+    align-self: left;
+}
+
+.feedback-left > p:first-of-type {
+    font-size: var(--big-font);
+}
+
+.feedback-right {
+    grid-column: 5/13;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(8, 1fr);
+    position: relative;
+    padding: 50px 0;
+}
+
+.feedback-right > div:nth-of-type(1) {
+    grid-column: 2/5;
+}
+
+.feedback-right > div:nth-of-type(2) {
+    grid-column: 5/8;
+}
+
+.feedback-right img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: -0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.background-feedback-right {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--secondary-yellow);
+    height: 50%;
+    width: 100%;
+    border-radius: 0.5rem;
+    z-index: -1;
+}
+
+.feedback-right a > span {
+    font-size: var(--medium-font);
+}
+
+.feedback-right a > i {
+    font-size: 1.5rem;
+}
+
+.feedback-right a:hover > * {
+    color: var(--brown);
+}
+
+.feedback-right > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
