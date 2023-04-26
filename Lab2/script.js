@@ -2,10 +2,21 @@
 
 $(document).ready(function() {
 
-    $('#add-button').on('click', function() {
-        addTodoItem();
-      });
-
+    $('#add-btn').click(function() {
+        // Pobranie wartości z pola input
+        var newTodo = $('#input').val();
+    
+        // Dodanie nowego elementu do listy
+        if (newTodo !== '') {
+          var newLi = $('<li>', {class: 'list-group-item d-flex justify-content-between align-items-center', text: newTodo});
+          var deleteBtn = $('<button>', {type: 'button', class: 'btn btn-danger btn-sm', html: '<i class="fas fa-times"></i>'});
+    
+          newLi.append(deleteBtn);
+          $('#todo-list').append(newLi);
+          $('#input').val('');
+        }
+    });
+    
     $('#new-todo').on('keypress', function(event) {
         if (event.which === 13 && $(this).val() !== '') {
             addTodoItem($(this).val());
