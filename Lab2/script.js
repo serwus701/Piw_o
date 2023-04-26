@@ -6,7 +6,6 @@ $(document).ready(function() {
         addTodoItem();
       });
 
-    // Dodajemy event listener na przycisk dodawania nowego elementu
     $('#new-todo').on('keypress', function(event) {
         if (event.which === 13 && $(this).val() !== '') {
             addTodoItem($(this).val());
@@ -14,17 +13,14 @@ $(document).ready(function() {
         }
     });
 
-    // Dodajemy event listener na kliknięcie na element
     $(document).on('click', '#todo-list li', function() {
         toggleTodoItem($(this));
     });
 
-    // Dodajemy event listener na kliknięcie na przycisk usuwania elementu
     $(document).on('click', '#todo-list button', function() {
         removeTodoItem($(this).parent());
     });
 
-    // Obsługa cofania usunięcia elementu
     let deletedTodoItems = [];
 
     $(document).keydown(function(event) {
@@ -36,7 +32,6 @@ $(document).ready(function() {
         }
     });
 
-    // Funkcja dodająca nowy element do listy
     function addTodoItem(itemText) {
         let date = new Date();
         let item = $('<li>').text(itemText).addClass('todo-item');
@@ -49,7 +44,6 @@ $(document).ready(function() {
         $('#todo-list').append(item);
     }
     
-    // Funkcja zmieniająca stan elementu na zrobiony lub niezrobiony
     function toggleTodoItem(item) {
         item.toggleClass('done');
         let time = item.find('.time');
@@ -60,17 +54,13 @@ $(document).ready(function() {
         }
     }
     
-    // Funkcja usuwająca element z listy
     function removeTodoItem(item) {
-        // Pytamy użytkownika czy na pewno chce usunąć element
         if (confirm('Czy na pewno chcesz usunąć to zadanie?')) {
             item.remove();
-            // Dodajemy usunięty element do listy usuniętych elementów
             deletedTodoItems.push(item.prop('outerHTML'));
         }
     }
     
-    // Funkcja formatująca datę i czas w odpowiednim formacie
     function formatDate(date) {
         let day = addLeadingZero(date.getDate());
         let month = addLeadingZero(date.getMonth() + 1);
@@ -80,7 +70,6 @@ $(document).ready(function() {
         return `${day}.${month}.${year} ${hours}:${minutes}`;
     }
     
-    // Funkcja dodająca wiodący zero do liczb jednocyfrowych
     function addLeadingZero(number) {
         if (number < 10) {
             return `0${number}`;

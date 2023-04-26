@@ -8,11 +8,36 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Lista ToDo</h1>
-        <input type="text" id="new-todo" placeholder="Dodaj nowe zadanie">
-        <ul id="todo-list">
-        </ul>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="input-group">
+        <input type="text" id="input" class="form-control" placeholder="Dodaj nowy rekord">
+        <div class="input-group-append">
+          <button id="add-btn" class="btn btn-primary">Dodaj</button>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+<ul id="todo-list" class="list-group mt-3">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    EXAMPLE1
+    <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    EXAMPLE2
+    <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    EXAMPLE3
+    <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+  </li>
+</ul>
+
 </body>
 </html>
