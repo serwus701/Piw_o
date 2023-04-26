@@ -3,10 +3,8 @@
 $(document).ready(function() {
 
     $('#add-btn').click(function() {
-        // Pobranie wartości z pola input
         var newTodo = $('#input').val();
     
-        // Dodanie nowego elementu do listy
         if (newTodo !== '') {
           var newLi = $('<li>', {class: 'list-group-item d-flex justify-content-between align-items-center', text: newTodo});
           var deleteBtn = $('<button>', {type: 'button', class: 'btn btn-danger btn-sm', html: '<i class="fas fa-times"></i>'});
@@ -16,7 +14,7 @@ $(document).ready(function() {
           $('#input').val('');
         }
     });
-    
+
     $('#new-todo').on('keypress', function(event) {
         if (event.which === 13 && $(this).val() !== '') {
             addTodoItem($(this).val());
@@ -43,27 +41,40 @@ $(document).ready(function() {
         }
     });
 
-    function addTodoItem(itemText) {
-        let date = new Date();
-        let item = $('<li>').text(itemText).addClass('todo-item');
-        let time = $('<span>').addClass('time').text(formatDate(date));
-        item.append(time);
-
-        let deleteBtn = $('<button>').addClass('delete-btn').html('&times;');
-        item.append(deleteBtn);
+    function addTodoItem() {
+        var newTodo = document.getElementById('input').value;
+        
+        if (newTodo !== '') {
+          var newLi = document.createElement('li');
+          newLi.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+          newLi.textContent = newTodo;
+      
+          var timeSpan = document.createElement('span');
+          timeSpan.classList.add('time');
+          newLi.appendChild(timeSpan);
+      
+          var deleteBtn = document.createElement('button');
+          deleteBtn.classList.add('btn', 'btn-danger', 'btn-sm');
+          deleteBtn.innerHTML = '<i class="fas fa-times"></i>';
+      
+          newLi.appendChild(deleteBtn);
+          document.getElementById('todo-list').appendChild(newLi);
+          document.getElementById('input').value = '';
+        }
+      }
+      
     
-        $('#todo-list').append(item);
-    }
-    
-    function toggleTodoItem(item) {
+      function toggleTodoItem(item) {
         item.toggleClass('done');
         let time = item.find('.time');
         if (item.hasClass('done')) {
-            time.text(formatDate(new Date()));
+          time.text('Clicked at: ' + formatDate(new Date()));
         } else {
-            time.text('');
+          time.text('');
         }
-    }
+      }
+      
+      
     
     function removeTodoItem(item) {
         if (confirm('Czy na pewno chcesz usunąć to zadanie?')) {
