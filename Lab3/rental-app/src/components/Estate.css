@@ -1,0 +1,39 @@
+.estate {
+
+    width: 40%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.estate>div {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.estate-img {
+    width: 70%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+}
+
+.estate-record-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+}

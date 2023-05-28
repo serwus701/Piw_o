@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.filter-input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    outline: none;
+    margin-left: 10px;
+}
