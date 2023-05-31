@@ -1,28 +1,22 @@
 import './App.css';
 import React from 'react';
-import EstateList from './components/EstateList.js';
-import Navbar from './components/Navbar.js';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './components/Navigation/Home';
+import AddNew from './components/Navigation/AddNew';
 
 function App() {
-
-  const [cityFilter, setCityFilter] = React.useState("");
-  const [roomsFilter, setRoomsFilter] = React.useState(null);
-  const [descriptionFilter, setDescriptionFilter] = React.useState("");
-
   return (
     <div className="App">
-      <Navbar
-        setCityFilter={setCityFilter}
-        setRoomsFilter={setRoomsFilter}
-        setDescriptionFilter={setDescriptionFilter}
-      />
-      <EstateList
-        cityFilter={cityFilter}
-        roomsFilter={roomsFilter}
-        descriptionFilter={descriptionFilter}
-      />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/addNew" element={<AddNew />} />
+      </Routes>
     </div>
+
   );
 }
 
