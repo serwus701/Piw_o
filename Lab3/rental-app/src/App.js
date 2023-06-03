@@ -11,10 +11,12 @@ import AddNew from './components/Navigation/AddNew';
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/addNew" element={<AddNew />} />
-      </Routes>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/addNew" element={<AddNew />} />
+        </Routes>
+      </Router>
     </div>
 
   );
