@@ -18,7 +18,7 @@ export default function AddNew({ handler }) {
         }
 
         const newProperty = {
-            city: city,
+            location: city,
             address: address,
             rooms: rooms,
             price: price,
@@ -33,6 +33,7 @@ export default function AddNew({ handler }) {
 
     return (
         <div className='record-input-box'>
+            <h1>Add new record</h1>
             <div>
                 City:
                 <input type="text" placeholder="Location"
@@ -41,35 +42,35 @@ export default function AddNew({ handler }) {
                     } />
             </div>
             <div>
-                address:
+                Address:
                 <input type="text" placeholder="Address"
                     onChange={
                         event => setAddress(event.target.value)
                     } />
             </div>
             <div>
-                rooms number:
+                Rooms number:
                 <input type="number" placeholder="Rooms"
                     onChange={
                         event => setRooms(event.target.value)
                     } />
             </div>
             <div>
-                price:
+                Price:
                 <input type="number" placeholder="Price"
                     onChange={
                         event => setPrice(event.target.value)
                     } />
             </div>
             <div>
-                description:
+                Description:
                 <input type="text" placeholder="Description"
                     onChange={
                         event => setDescription(event.target.value)
                     } />
             </div>
             <div>
-                image src:
+                Image src:
                 <input type="text" placeholder="Image src"
                     onChange={
                         event => setImage(event.target.value)
