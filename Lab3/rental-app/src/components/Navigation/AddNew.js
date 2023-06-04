@@ -1,9 +1,10 @@
 import React from 'react';
+import NewRecordInput from '../NewRecordInput';
 
-export default function AddNew() {
+export default function AddNew(props) {
     return (
         <div>
-            About text
+            <NewRecordInput addNewRecord={props.addNewRecord} />
         </div>
     );
 }
