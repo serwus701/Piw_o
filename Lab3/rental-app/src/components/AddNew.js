@@ -2,7 +2,7 @@ import React from 'react';
 import './AddNew.css';
 import { useNavigate } from 'react-router-dom';
 
-const AddNew = ({ handler }) => {
+const AddNew = ({ handler, maxId }) => {
     let city = "";
     let address = "";
     let rooms = "";
@@ -24,7 +24,8 @@ const AddNew = ({ handler }) => {
             rooms: rooms,
             price: price,
             description: description,
-            image: image
+            image: image,
+            id: maxId + 1
         };
 
         handler(newProperty);

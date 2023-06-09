@@ -17,6 +17,8 @@ function EstateList(props) {
             description={estate.description}
             location={estate.location}
             image={estate.image}
+            addToCart={props.addToCart}
+            id={estate.id}
           />
       )
       }

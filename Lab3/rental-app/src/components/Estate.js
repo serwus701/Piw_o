@@ -7,8 +7,14 @@ function Estate(props) {
         <div className='estate'>
             <h1>{props.description}</h1>
             <div className="estate-record-columns">
-                <div>
+                <div className="picture-box">
                     <img src={props.image} alt="Estate" className="estate-img" />
+                    <button
+                        className="add-to-cart-button"
+                        onClick={() => props.addToCart(props.id)}
+                    >
+                        Add to cart
+                    </button>
                 </div>
                 <div>
                     <p>Price: {props.price} PLN</p>

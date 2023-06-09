@@ -33,7 +33,7 @@ const Login = (props) => {
                     onClick={() => {
                         const user = props.users.find(user => user.login === login && user.password === password);
                         if (user) {
-                            setUserLogged(user.login);
+                            setUserLogged(user);
                             navigate('/');
                         } else {
                             <div className="alert alert-danger" role="alert">

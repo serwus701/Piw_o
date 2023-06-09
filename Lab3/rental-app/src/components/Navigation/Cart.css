@@ -1,0 +1,20 @@
+.cart {
+    background-color: grey;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.go-home-button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #61dafb;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
