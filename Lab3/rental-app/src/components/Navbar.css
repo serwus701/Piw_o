@@ -1,15 +1,12 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
     background-color: #1a1a1a;
     color: white;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+}
+
+.input-section>div {
+    padding-right: 20px;
 }
 
 .filter-input {
@@ -20,4 +17,27 @@
     padding: 5px;
     outline: none;
     margin-left: 10px;
+}
+
+.input-section {
+    display: flex;
+    padding: 15px;
+}
+
+.buttons-section {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+.route-button {
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin-left: 10px;
+    height: 70%;
 }
