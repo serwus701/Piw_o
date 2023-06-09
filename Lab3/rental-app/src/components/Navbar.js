@@ -2,7 +2,6 @@ import React from "react";
 import "./Navbar.css";
 import { useNavigate } from 'react-router-dom';
 
-
 function Navbar({ setCityFilter, setRoomsFilter, setDescriptionFilter }) {
     const navigate = useNavigate();
 
