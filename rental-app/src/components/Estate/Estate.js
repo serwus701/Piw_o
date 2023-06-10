@@ -14,23 +14,6 @@ function Estate(props) {
             <div className="estate-record-columns">
                 <div className="picture-box">
                     <img src={estate.image} alt="Estate" className="estate-img" />
-                    {/* {
-                        props.isCart ? (
-                            <button
-                                className="add-to-cart-button"
-                                onClick={() => props.handleCartButton(estate)}
-                            >
-                                Remove from cart
-                            </button>
-                        ) :
-
-                            <button
-                                className="add-to-cart-button"
-                                onClick={() => props.handleCartButton(estate)}
-                            >
-                                Add to cart
-                            </button>
-                    } */}
 
                     {userLogged ?
                         props.isCart ?
