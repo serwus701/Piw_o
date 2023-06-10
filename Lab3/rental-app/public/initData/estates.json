@@ -1,51 +1,50 @@
 [
-    {
-      "location": "Kraków",
-      "address": "ul. Szewska 7",
-      "rooms": 1,
-      "price": 1500,
-      "description": "Nowoczesne mieszkanie w samym sercu Krakowa",
-      "image": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-      "location": "Gdańsk",
-      "address": "ul. Długa 15",
-      "rooms": 4,
-      "price": 3000,
-      "description": "Piękne mieszkanie z widokiem na Starówkę w Gdańsku",
-      "image": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-      "location": "Poznań",
-      "address": "ul. Wrocławska 9",
-      "rooms": 2,
-      "price": 2200,
-      "description": "Nowoczesne mieszkanie w pobliżu Starego Rynku w Poznaniu",
-      "image": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-      "location": "Wrocław",
-      "address": "ul. Świdnicka 10",
-      "rooms": 1,
-      "price": 1800,
-      "description": "Eleganckie mieszkanie w samym centrum Wrocławia",
-      "image": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-      "location": "Warszawa",
-      "address": "ul. Nowogrodzka 11",
-      "rooms": 2,
-      "price": 2000,
-      "description": "Przestronne mieszkanie w centrum Warszawy",
-      "image": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    },
-    {
-      "location": "Katowice",
-      "address": "ul. Mariacka 8",
-      "rooms": 3,
-      "price": 2800,
-      "description": "Nowoczesne mieszkanie w pobliżu Starego Miasta w Katowicach",
-      "image": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-    }
-  ]
-    
+  {
+    "location": "Kraków",
+    "address": "ul. Szewska 7",
+    "rooms": 1,
+    "price": 1500,
+    "description": "Nowoczesne mieszkanie w samym sercu Krakowa",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQg1aD3dZ5UsNFSFuwLhtXDYGBX5g_TdT-g&usqp=CAU"
+  },
+  {
+    "location": "Gdańsk",
+    "address": "ul. Długa 15",
+    "rooms": 4,
+    "price": 3000,
+    "description": "Piękne mieszkanie z widokiem na Starówkę w Gdańsku",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIKUa0zx2YNrZ8zBdm7TgG93qkfU0v0gOrx6v64WOnKBtswacu_o2Kq8c8uluKEFNnMBA&usqp=CAU"
+  },
+  {
+    "location": "Poznań",
+    "address": "ul. Wrocławska 9",
+    "rooms": 2,
+    "price": 2200,
+    "description": "Nowoczesne mieszkanie w pobliżu Starego Rynku w Poznaniu",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-hbFnC_ZbuU0xkxBL65TOT1bbV4HbGSmxL_0B-QL8IfnPZPOGBqhCAM93SdO6hyrjPjY&usqp=CAU"
+  },
+  {
+    "location": "Wrocław",
+    "address": "ul. Świdnicka 10",
+    "rooms": 1,
+    "price": 1800,
+    "description": "Eleganckie mieszkanie w samym centrum Wrocławia",
+    "image": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+  {
+    "location": "Warszawa",
+    "address": "ul. Nowogrodzka 11",
+    "rooms": 2,
+    "price": 2000,
+    "description": "Przestronne mieszkanie w centrum Warszawy",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd5HdU32Q-8mYcxHKAG0qpGu4u1g7_x-yvIA&usqp=CAU"
+  },
+  {
+    "location": "Katowice",
+    "address": "ul. Mariacka 8",
+    "rooms": 3,
+    "price": 2800,
+    "description": "Nowoczesne mieszkanie w pobliżu Starego Miasta w Katowicach",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvy5aBlifcmQXomOsX93RyiCYSUVP9friKnA&usqp=CAU"
+  }
+]

@@ -8,7 +8,7 @@ const Cart = (props) => {
     const navigate = useNavigate();
 
     return (
-        <div className="cart">
+        <div >
             <Navbar
                 setCityFilter={props.setCityFilter}
                 setRoomsFilter={props.setRoomsFilter}
@@ -21,7 +21,7 @@ const Cart = (props) => {
                 <EstateList
                     estateList={props.estateList}
                     handleCartButton={props.handleCartButton}
-                    isCart={false}
+                    isCart={true}
                 /> :
                 <div className="empty-cart">
                     <h2>Cart is empty</h2>
