@@ -37,7 +37,7 @@ function App() {
         }
 
       case 'REMOVE_FROM_CART':
-        return cart.filter(item => item.id !== action.id)
+        return cart.filter(item => item.id !== action.item.id)
       default:
         return cart;
     }
@@ -48,8 +48,7 @@ function App() {
   }
 
   function removeFromCart(item) {
-    console.log(item);
-    // dispatch({ type: 'REMOVE_FROM_CART', item: item });
+    dispatch({ type: 'REMOVE_FROM_CART', item: item });
   }
 
   const [users, setUsers] = useState([
