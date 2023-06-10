@@ -1,27 +1,20 @@
 import React from "react";
-import Estate from "./Estate.js";
+import Estate from "./Estate/Estate.js";
 
 function EstateList(props) {
   let counter = 1;
-
 
   return (
     <div className="estate-list">
       {props.estateList.map(
         estate =>
           <Estate
+            estate={estate}
             key={counter++}
-            address={estate.address}
-            rooms={estate.rooms}
-            price={estate.price}
-            description={estate.description}
-            location={estate.location}
-            image={estate.image}
-            addToCart={props.addToCart}
-            id={estate.id}
+            handleCartButton={props.handleCartButton}
+            isCart={props.isCart}
           />
-      )
-      }
+      )}
     </div>
   );
 }

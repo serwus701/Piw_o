@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
-import { ReferenceDataContext } from "./ReferenceDataContext";
+import { ReferenceDataContext } from "../../ReferenceDataContext";
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
@@ -74,14 +74,26 @@ function Navbar(props) {
                             Log Out
                         </button>
 
-                        <button
-                            className="route-button"
-                            onClick={() => {
-                                navigate('/cart');
-                            }}
-                        >
-                            Cart
-                        </button>
+                        {
+                            props.isCart ?
+                                <button
+                                    className="route-button"
+                                    onClick={() => {
+                                        navigate('/');
+                                    }}
+                                >
+                                    Home
+                                </button>
+                                :
+                                <button
+                                    className="route-button"
+                                    onClick={() => {
+                                        navigate('/cart');
+                                    }}
+                                >
+                                    Cart
+                                </button>
+                        }
                     </div>
 
 

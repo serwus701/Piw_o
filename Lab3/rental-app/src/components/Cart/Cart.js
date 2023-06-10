@@ -1,16 +1,28 @@
 import React from 'react';
 import './Cart.css';
-import { Link } from 'react-router-dom';
 import EstateList from '../EstateList';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
 
 const Cart = (props) => {
     const navigate = useNavigate();
 
     return (
         <div className="cart">
+            <Navbar
+                setCityFilter={props.setCityFilter}
+                setRoomsFilter={props.setRoomsFilter}
+                setDescriptionFilter={props.setDescriptionFilter}
+                setPriceSortSelect={props.setPriceSortSelect}
+                priceSortSelect={props.priceSortSelect}
+                isCart={true}
+            />
             {props.estateList.length > 0 ?
-                <EstateList estateList={props.estateList} /> :
+                <EstateList
+                    estateList={props.estateList}
+                    handleCartButton={props.handleCartButton}
+                    isCart={false}
+                /> :
                 <div className="empty-cart">
                     <h2>Cart is empty</h2>
                     <p>Go to home page and add some estates to cart</p>
@@ -19,7 +31,9 @@ const Cart = (props) => {
                         onClick={() => {
                             navigate('/')
                         }
-                        }>Go home</button>
+                        }
+                    >Go home
+                    </button>
                 </div>
             }
         </div>
