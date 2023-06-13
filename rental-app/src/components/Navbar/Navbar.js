@@ -3,10 +3,12 @@ import "./Navbar.css";
 import { ReferenceDataContext } from "../../ReferenceDataContext";
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
+import { logout, useUser } from "../../Firebase/UserService";
 
 function Navbar(props) {
     const navigate = useNavigate();
     const { userLogged, setUserLogged } = useContext(ReferenceDataContext);
+    const user = useUser();
 
     const options = [
         { value: '', label: 'None' },
@@ -51,9 +53,7 @@ function Navbar(props) {
                         placeholder="Sort by price"
                         className="price-sort-dropdown"
                         defaultValue={props.priceSortSelect}
-                        onChange={event => {
-                            props.setPriceSortSelect(event.value)
-                        }
+                        onChange={event => { props.setPriceSortSelect(event.value) }
                         }
                         options={options}
                     />
@@ -62,13 +62,14 @@ function Navbar(props) {
             </div>
 
             <div className="buttons-section">
-                {userLogged ? (
+                {user ? (
                     <div className="route-button">
-                        {`Hello ${userLogged.name}!`}
+                        {`Hello ${user.reloadUserInfo.displayName}!`}
                         <button
                             className="route-button"
                             onClick={() => {
                                 setUserLogged(null);
+                                logout();
                             }}
                         >
                             Log Out

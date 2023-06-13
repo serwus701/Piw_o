@@ -1,13 +1,41 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css';
 import { ReferenceDataContext } from "../../ReferenceDataContext";
 import { useNavigate } from 'react-router-dom';
+import { loginWithGoogle, loginWithGithub, useUser } from "../../Firebase/UserService";
 
 const Login = (props) => {
-    const navigate = useNavigate();
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
+
     const { userLogged, setUserLogged } = useContext(ReferenceDataContext);
-    let login = "";
-    let password = "";
+    const navigate = useNavigate();
+    const appUser = useUser();
+
+    const handleLoginWithEmail = () => {
+        const user = props.users.find(user => user.login === login && user.password === password);
+        if (user) {
+            setUserLogged(user);
+            navigate('/');
+        } else {
+            <div className="alert alert-danger" role="alert">
+                Incorrect login or password
+            </div>
+            alert('Incorrect login or password');
+        }
+    }
+
+
+    const handleLoginWithGoogle = () => {
+        loginWithGoogle().then(
+            () => {
+                navigate("/")
+            });
+    }
+
+    const navigateHome = () => {
+        navigate('/');
+    }
 
     return (
         <div className="login-page">
@@ -17,43 +45,48 @@ const Login = (props) => {
                     type="text"
                     name="name"
                     className='input-box'
-                    onChange={(event) => login = event.target.value}
+                    onChange={(event) => setLogin(event.target.value)}
                 />
                 <h3>Password:</h3>
                 <input
                     type="password"
                     name="name"
                     className='input-box'
-                    onChange={(event) => password = event.target.value}
+                    onChange={(event) => setPassword(event.target.value)}
                 />
-                <input
-                    type="submit"
-                    value="Login"
+                <button
+                    type='button'
                     className='login-button'
-                    onClick={() => {
-                        const user = props.users.find(user => user.login === login && user.password === password);
-                        if (user) {
-                            setUserLogged(user);
-                            navigate('/');
-                        } else {
-                            <div className="alert alert-danger" role="alert">
-                                Incorrect login or password
-                            </div>
-                            alert('Incorrect login or password');
-                        }
-                    }}
-                />
-                <input
-                    type="submit"
+                    onClick={handleLoginWithEmail}
+                >
+                    Login
+                </button>
+
+                <h3>or</h3>
+
+                <button
+                    className='login-button'
+                    onClick={handleLoginWithGoogle}
+                    type='button'
+                >
+                    Login with Google
+                </button>
+                <button
+                    className='login-button'
+                    onClick={handleLoginWithGoogle}
+                >
+                    Login with Github
+                </button>
+                <button
                     value="Back"
                     className='back-button'
-                    onClick={() => {
-                        navigate('/');
-                    }}
-                />
+                    onClick={navigateHome}
+                >
+                    Back
+                </button>
 
             </form>
-        </div>
+        </div >
     );
 }
 

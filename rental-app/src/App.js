@@ -12,6 +12,8 @@ import Cart from './components/Cart/Cart';
 import axios from 'axios';
 import Home from './components/Home';
 
+import { useUser } from "./Firebase/UserService";
+
 
 function App() {
   const [estateList, setEstateList] = useState([]);
@@ -23,6 +25,8 @@ function App() {
   const [priceSortSelect, setPriceSortSelect] = useState("");
 
   const [cart, dispatch] = useReducer(reducer, []);
+
+  const user = useUser();
 
 
 
