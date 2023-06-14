@@ -1,13 +1,10 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
-import { ReferenceDataContext } from "../../ReferenceDataContext";
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
 function Navbar(props) {
     const navigate = useNavigate();
-    const { userLogged, setUserLogged } = useContext(ReferenceDataContext);
-
     const options = [
         { value: '', label: 'None' },
         { value: 'Ascending', label: 'Ascending' },
@@ -62,55 +59,6 @@ function Navbar(props) {
             </div>
 
             <div className="buttons-section">
-                {userLogged ? (
-                    <div className="route-button">
-                        {`Hello ${userLogged.name}!`}
-                        <button
-                            className="route-button"
-                            onClick={() => {
-                                setUserLogged(null);
-                            }}
-                        >
-                            Log Out
-                        </button>
-
-                        {
-                            props.isCart ?
-                                <button
-                                    className="route-button"
-                                    onClick={() => {
-                                        navigate('/');
-                                    }}
-                                >
-                                    Home
-                                </button>
-                                :
-                                <button
-                                    className="route-button"
-                                    onClick={() => {
-                                        navigate('/cart');
-                                    }}
-                                >
-                                    Cart
-                                </button>
-                        }
-                    </div>
-
-
-                ) : (
-                    <div className="route-button">
-
-                        <button
-                            className="route-button"
-                            onClick={() => {
-                                navigate('/login');
-                            }}
-                        >
-                            Login
-                        </button>
-                    </div>
-
-                )}
                 <div className="route-button">
 
                     <button

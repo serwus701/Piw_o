@@ -1,13 +1,11 @@
 import './App.css';
 import React, { useState, useEffect, useReducer } from 'react';
-import { ReferenceDataContextProvider } from "./ReferenceDataContext";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
 import AddNew from './components/AddNew/AddNew';
-import Login from './components/Login/Login';
 import Cart from './components/Cart/Cart';
 import axios from 'axios';
 import Home from './components/Home';
@@ -50,27 +48,6 @@ function App() {
   function removeFromCart(item) {
     dispatch({ type: 'REMOVE_FROM_CART', item: item });
   }
-
-  const [users, setUsers] = useState([
-    {
-      login: "admin",
-      password: "admin",
-      name: "Michał",
-      surname: "Malewicz"
-    },
-    {
-      login: "user",
-      password: "user",
-      name: "Jan",
-      surname: "Kowalski"
-    },
-    {
-      login: "user2",
-      password: "user2",
-      name: "Adam",
-      surname: "Nowak"
-    }
-  ]);
 
 
   useEffect(() => {
@@ -116,48 +93,40 @@ function App() {
 
   return (
     <div className="App">
-      <ReferenceDataContextProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={
-              <Home
-                setCityFilter={setCityFilter}
-                setRoomsFilter={setRoomsFilter}
-                setDescriptionFilter={setDescriptionFilter}
-                setPriceSortSelect={setPriceSortSelect}
-                priceSortSelect={priceSortSelect}
-                estateList={filteredEstates}
-                handleCartButton={addToCart}
+      <Router>
+        <Routes>
+          <Route path="/" element={
+            <Home
+              setCityFilter={setCityFilter}
+              setRoomsFilter={setRoomsFilter}
+              setDescriptionFilter={setDescriptionFilter}
+              setPriceSortSelect={setPriceSortSelect}
+              priceSortSelect={priceSortSelect}
+              estateList={filteredEstates}
+              handleCartButton={addToCart}
+            />
+          }
+          />
+          <Route
+            path="/addNew"
+            element={
+              <AddNew handler={handleNewEstateSubmit}
+                maxId={Math.max(...estateList.map(item => item.id))}
               />
             }
-            />
-            <Route
-              path="/addNew"
-              element={
-                <AddNew handler={handleNewEstateSubmit}
-                  maxId={Math.max(...estateList.map(item => item.id))}
-                />
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                <Login users={users} />
-              }
-            />
-            <Route
-              path="/cart"
-              element={
-                <Cart
-                  estateList={cart}
-                  handleCartButton={removeFromCart}
-                  isCart={true}
-                />
-              }
-            />
-          </Routes>
-        </Router>
-      </ReferenceDataContextProvider>
+          />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                estateList={cart}
+                handleCartButton={removeFromCart}
+                isCart={true}
+              />
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
