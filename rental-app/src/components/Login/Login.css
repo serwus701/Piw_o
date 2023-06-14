@@ -50,3 +50,11 @@
     font-weight: bold;
     border: 1px solid black;
 }
+
+.login-buttons-panel {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}

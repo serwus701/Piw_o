@@ -13,7 +13,9 @@ const Login = (props) => {
     const appUser = useUser();
 
     const handleLoginWithEmail = () => {
-        const user = props.users.find(user => user.login === login && user.password === password);
+        const user = props.users.find(
+            user => user.login === login && user.password === password
+        );
         if (user) {
             setUserLogged(user);
             navigate('/');
@@ -28,6 +30,13 @@ const Login = (props) => {
 
     const handleLoginWithGoogle = () => {
         loginWithGoogle().then(
+            () => {
+                navigate("/")
+            });
+    }
+
+    const handleLoginWithGitHub = () => {
+        loginWithGithub().then(
             () => {
                 navigate("/")
             });
@@ -54,6 +63,7 @@ const Login = (props) => {
                     className='input-box'
                     onChange={(event) => setPassword(event.target.value)}
                 />
+
                 <button
                     type='button'
                     className='login-button'
@@ -62,21 +72,28 @@ const Login = (props) => {
                     Login
                 </button>
 
-                <h3>or</h3>
+                <h5>or</h5>
 
-                <button
-                    className='login-button'
-                    onClick={handleLoginWithGoogle}
-                    type='button'
-                >
-                    Login with Google
-                </button>
-                <button
-                    className='login-button'
-                    onClick={handleLoginWithGoogle}
-                >
-                    Login with Github
-                </button>
+                <div className='login-buttons-panel'>
+
+                    <button
+                        className='login-button'
+                        onClick={handleLoginWithGoogle}
+                        type='button'
+                    >
+                        Login with Google
+                    </button>
+
+                    <button
+                        className='login-button'
+                        onClick={handleLoginWithGitHub}
+                    >
+                        Login with Github
+                    </button>
+
+                </div>
+
+
                 <button
                     value="Back"
                     className='back-button'
